@@ -9,6 +9,7 @@ The implementation is based on *Pytorch*, specificially the module *torch.nn.par
 
 ## Frontend
 First of all, you need to install Node.js which can be found at https://nodejs.org/en/
+
 Second, on the terminal, run command:
 ```
 npm install
@@ -31,7 +32,7 @@ Please read Readme in backend directory for more information
 ## Author
 Current author: 
 - [Tran Khanh Tung](https://github.com/KhanhTungTran)
-- [Tran Hoang Viet])(https://github.com/HoangViet144)
+- [Tran Hoang Viet](https://github.com/HoangViet144)
 
 ## References
 - [Distributed data parallel training in Pytorch](https://yangkky.github.io/2019/07/08/distributed-pytorch-tutorial.html)
