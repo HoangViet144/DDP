@@ -10,7 +10,7 @@ The implementation is based on *Pytorch*, specificially the module *torch.nn.par
 ## Frontend
 First of all, you need to install Node.js which can be found at https://nodejs.org/en/
 
-Second, on the terminal, run command:
+Second, in the terminal, change dir to frontend folder and run command:
 ```
 npm install
 ```
@@ -20,6 +20,18 @@ npm start
 ```
 
 ## Backend
+Regarding of backend, you need to install mongo database, which can be found at https://www.mongodb.com/try/download/community
+
+Then, in the terminal, change dir to backend folder and run command:
+```
+npm install
+```
+to install all dependencies, and then run
+```
+npm start
+```
+to start the server. Moreover, you can see the database via the GUI MongoDBCompass included in the downloaded mongodb package
+## Model
 ```
 Please read Readme in backend directory for more information
 ```
