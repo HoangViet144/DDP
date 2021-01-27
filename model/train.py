@@ -24,16 +24,16 @@ import torchvision.transforms as transforms
 # app.config['SECRET_KEY'] = 'secret!'
 # socketio = SocketIO(app, cors_allowed_origins='*')
 # CORS(app)
-
+import requests
 from firebase import firebase
 firebase = firebase.FirebaseApplication(
     "https://cnextra-f152b-default-rtdb.firebaseio.com/", None)
 # # ---------------------------------------------
-
+url="http://localhost:9000/log/create"
 
 def main():
     parser = argparse.ArgumentParser()
-    parser.add_argument('--nodes', default=2, type=int, metavar='N',
+    parser.add_argument('--nodes', default=1, type=int, metavar='N',
                         help='number of data loading workers (default: 2)')
     parser.add_argument('--cpus', default=1, type=int,
                         help='number of cpus per node')
@@ -105,13 +105,18 @@ def train(cpu, args):
             optimizer.step()
             # For logging:
             if (i + 1) % batch_size and cpu == 0:
-                #print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'.format
+                # print('Epoch [{}/{}], Step [{}/{}], Loss: {:.4f}'.format
                 #      (epoch + 1, args.epochs, i + 1, total_step, loss.item()))
-                lossValue = loss.item()
-                lossVal.append(lossValue)
+                #lossValue = loss.item()
+                #lossVal.append(lossValue)
                 #result = firebase.post('/lossdata', lossValue)
                 #print(result)
-    result = firebase.post('/lossdata', lossVal)
+                myobj = {'data': loss.item()}
+
+                x = requests.post(url, data = myobj)
+                # print(x)
+
+    #result = firebase.post('/lossdata', lossVal)
     if cpu == 0:
         print("Training completed in: " + str(datetime.now() - start))
 
