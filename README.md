@@ -33,7 +33,7 @@ npm start
 to start the server. Moreover, you can see the database via the GUI MongoDBCompass included in the downloaded mongodb package
 ## Model
 ```
-Please read Readme in backend directory for more information
+Please read Readme in model directory for more information
 ```
 
 ## Project status and Roadmap
